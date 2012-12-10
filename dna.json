@@ -45,8 +45,8 @@
     "sudo",
     "imagemagick", 
     "passenger_nginx",
-    "gems",
     "mysql::server"
+    "gems",
   ]
 }
 
