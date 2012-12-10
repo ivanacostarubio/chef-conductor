@@ -46,7 +46,7 @@
     "imagemagick", 
     "passenger_nginx",
     "gems",
-    "mysql::server",
+    "mysql::server"
   ]
 }
 
