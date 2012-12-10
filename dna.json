@@ -1,9 +1,11 @@
 {
   "mysql": {
     "server_root_password":  "root",
+    "server_repl_password": "iloverandompasswordsbutthiswilldo",
+    "server_debian_password": "iloverandompasswordsbutthiswilldo",
     "bind_address": "127.0.0.1"
   },
-  "passenger_apache2": {
+  "passenger_nginx": {
     "version": "0.99.4"
   },
   "gems": [
@@ -21,18 +23,12 @@
   ],
   "apps": [ 
     { 
-      "name": "conductor", 
-      "username": "conductor", 
-      "git_branch": "master", 
-      "server": "debian.local"
-    } 
+    "name": "conductor", 
+    "username": "conductor", 
+    "git_branch": "master", 
+    "server": "debian.local"
+  } 
   ],
-  "users": {
-    "conductor": {
-      "password": "changeme",
-      "comment": "Conductor App"
-    }
-  },
   "ssh_keys": {
     "ivan": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7HrJCEUJvbLJfQR9U8EyBKqRkYLH79V3RAHBoICxaUpQWuKPBOTaIDyu9ijF9fA7bI57yzFCW6SB8FbcVsFBrpMj3JT/hRqoDF3F3Ic3I4IlqKoUKp+D3RGwdaCcI2Ghsdqsx0J/LC7sx+vocRy0ypI0SIcVeAAj2WtQ/KpGVdAzw47sLwRw/dVtf3hho67hNUjSdMVagwd+izba0/8/x6EvYC+fHvTOIpbiENgez3iqerSMtY6oO/b4y2KCxcOU5aad2tGyDoV3c8s+xCr7b2P+Z65o4ZPE1pUnk2bzUK6fE8BDIKqJD7VXg6lwHC/5QmvYNiXl522zoO9GIyKK5 ivan@bakedweb.net"
   },
@@ -43,14 +39,14 @@
   },
   "recipes": [
     "build-essential", 
+    "openssl",
     "git", 
     "iptables",
-    "users",
     "sudo",
     "imagemagick", 
-    "passenger_enterprise::nginx",
+    "passenger_nginx",
     "gems",
-    "mysql::server", 
-    "simple_rails_app"
+    "mysql::server",
   ]
 }
+
